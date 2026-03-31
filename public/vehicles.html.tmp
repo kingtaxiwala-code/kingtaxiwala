@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Vehicles - King Taxiwala Travels</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=2.1">
+</head>
+<body>
+    <main id="main-content" style="padding-top: 80px;">
+        <section id="vehicles" class="section vehicles-section border-top-gold">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <h2 class="section-title" data-i18n="fleetTitle">Exceptional <span class="gold-text">Fleet</span></h2>
+                    <p class="section-subtitle" data-i18n="fleetSub">Travel in comfort and style with our well-maintained vehicles</p>
+                
+                <div class="vehicles-grid">
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="/images/innova-final.png" alt="Toyota Innova">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="vehNewInnova">Toyota Innova</h3>
+                            <p class="vehicle-type" data-i18n="vSUVErtiga">SUV (Innova/Ertiga)</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s7"><i class="fa-solid fa-user-group"></i> 7+1 Seats</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                                <h4>₹16<span data-i18n="perKm">/km</span></h4>
+                            <a href="/contact#phone" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="/images/innova_crysta_new.jpg" alt="Innova Crysta">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="veh1Title">Toyota Innova Crysta</h3>
+                            <p class="vehicle-type" data-i18n="vCrysta">SUV</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s7"><i class="fa-solid fa-user-group"></i> 7+1 Seats</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                            <a href="/contact#phone" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+                    
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="/images/kia-carens.png" alt="Kia Carens">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="vehKiaCarens">Kia Carens</h3>
+                            <p class="vehicle-type" data-i18n="vMUV">Premium MUV (Carens)</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s7"><i class="fa-solid fa-user-group"></i> 7+1 Seats</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                                <h4>₹18<span data-i18n="perKm">/km</span></h4>
+                            <a href="/contact#phone" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+                    
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="/images/etios.png" alt="Toyota Etios">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="vehEtios">Toyota Etios</h3>
+                            <p class="vehicle-type" data-i18n="vSedan">Comfort Sedan</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s4"><i class="fa-solid fa-user-group"></i> 4+1 Seats</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                                <h4>₹12<span data-i18n="perKm">/km</span></h4>
+                            <a href="#modal" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="/images/ertiga.png" alt="Maruti Suzuki Ertiga">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="vehErtiga">Maruti Suzuki Ertiga</h3>
+                            <p class="vehicle-type" data-i18n="vSUVErtiga">SUV (Innova/Ertiga)</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s7"><i class="fa-solid fa-user-group"></i> 7+1 Seats</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                                <h4>₹16<span data-i18n="perKm">/km</span></h4>
+                            <a href="#modal" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="/images/kia_sonet.jpeg" alt="Kia Sonet">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="vehSonetTitle">Kia Sonet</h3>
+                            <p class="vehicle-type" data-i18n="vCSUV">Compact SUV</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s4"><i class="fa-solid fa-user-group"></i> 4+1 Seats</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                                <h4>₹14<span data-i18n="perKm">/km</span></h4>
+                            <a href="#modal" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="/images/dzire.jpg" alt="Swift Dzire">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="veh2Title">Swift Dzire / Etios</h3>
+                            <p class="vehicle-type" data-i18n="vSedan">Comfort Sedan</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s4"><i class="fa-solid fa-user-group"></i> 4+1 Seats</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                                <h4>₹12<span data-i18n="perKm">/km</span></h4>
+                            <a href="#modal" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="/images/honda_amaze.jpeg" alt="Honda Amaze">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="vehAmazeTitle">Honda Amaze</h3>
+                            <p class="vehicle-type" data-i18n="vSedan">Comfort Sedan</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s4"><i class="fa-solid fa-user-group"></i> 4+1 Seats</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                                <h4>₹12<span data-i18n="perKm">/km</span></h4>
+                            <a href="#modal" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="/images/fortuner.png" alt="Toyota Fortuner">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="veh3Title">Toyota Fortuner</h3>
+                            <p class="vehicle-type" data-i18n="vSUV">Exceptional SUV</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s7"><i class="fa-solid fa-user-group"></i> 6+1 Seats</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                                <h4>₹35<span data-i18n="perKm">/km</span></h4>
+                            <a href="#modal" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="images/tempo_traveller_new.jpeg" alt="Tempo Traveller">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="veh4Title">Tempo Traveller</h3>
+                            <p class="vehicle-type" data-i18n="optTempo">Group Travel</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s12"><i class="fa-solid fa-user-group"></i> 12/14/17 Seats</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                                <h4>₹25<span data-i18n="perKm">/km</span></h4>
+                            <a href="#modal" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+
+                    <div class="vehicle-card glass-panel">
+                        <div class="vehicle-img">
+                            <img src="/images/urbania.png" alt="Force Urbania">
+                        <div class="vehicle-info">
+                            <h3 data-i18n="vehUrbaniaTitle">Force Urbania</h3>
+                            <p class="vehicle-type" data-i18n="optUrbania">Premium Group Travel</p>
+                            <div class="vehicle-features">
+                                <span data-i18n="s17"><i class="fa-solid fa-user-group"></i> 17 Seater</span>
+                                <span data-i18n="ac"><i class="fa-solid fa-snowflake"></i> AC</span>
+                                <h4>₹28<span data-i18n="perKm">/km</span></h4>
+                            <a href="#modal" class="btn btn-primary btn-block" data-i18n="bookVehBtn">Book Vehicle</a>
+        </section>
+    </main>
+
+    <script src="/js/lang.js?v=2.3"></script>
+    <script src="/js/components.js?v=1.4"></script>
+    <script src="/js/main.js?v=1.5"></script>
+</body>
+</html>

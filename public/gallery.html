@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Gallery | Our Fleet of Premium Cabs & SUVs | King Taxiwala</title>
+    <meta name="description"
+        content="View our fleet of well-maintained premium vehicles including Innova Crysta, Etios, and Fortuner. High-quality images of our cab service in Vijayawada.">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=10.0">
+</head>
+
+<body>
+    <main id="main-content" style="padding-top: 80px;">
+        <section id="gallery" class="section">
+            <div class="section-container">
+                <div class="section-header text-center">
+                    <h1 class="section-title" data-i18n="galleryTitle">Our <span class="gold-text">Vehicle
+                            Gallery</span></h1>
+                    <p class="section-subtitle" data-i18n="galSub">Glimpses of our fleet and happy journeys</p>
+                </div>
+
+                <div class="masonry-grid" id="galleryGrid">
+                    <div class="gallery-item"
+                        data-src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=400"
+                            alt="Innova Crysta">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+
+                    <div class="gallery-item"
+                        data-src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&q=80&w=800">
+                        <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&q=80&w=400"
+                            alt="Sedan Taxi">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+
+                    <div class="gallery-item video-item" data-video="https://www.w3schools.com/html/mov_bbb.mp4">
+                        <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=400"
+                            alt="City Drive">
+                        <div class="gallery-overlay"><i class="fa-regular fa-circle-play"></i></div>
+                    </div>
+
+                    <div class="gallery-item"
+                        data-src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&q=80&w=800">
+                        <img src="https://images.unsplash.com/photo-1609521263047-f8f205293f24?auto=format&fit=crop&q=80&w=400"
+                            alt="Comfortable SUV">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+
+                    <div class="gallery-item" data-src="images/tempo_traveller_new.jpeg">
+                        <img src="images/tempo_traveller_new.jpeg" alt="Tempo Traveller Interior">
+                        <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                    </div>
+
+                </div><!-- /.masonry-grid -->
+            </div><!-- /.section-container -->
+        </section><!-- /#gallery -->
+
+        <!-- Lightbox -->
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close"><i class="fa-solid fa-times"></i></span>
+            <div class="lightbox-content relative">
+                <img id="lightbox-img" src="" alt="Gallery Image">
+                <video id="lightbox-video" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support HTML video.
+                </video>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/lang.js?v=10.0"></script>
+    <script src="/js/components.js?v=10.0"></script>
+    <script src="/js/main.js?v=10.0"></script>
+</body>
+
+</html>

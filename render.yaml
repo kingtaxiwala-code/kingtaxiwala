@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: king-taxiwala-travels
+    domains:
+      - kingtaxiwala.com
+      - www.kingtaxiwala.com
+    env: node
+    plan: free # Can be upgraded for higher performance
+    region: singapore # Closest to India
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        fromConfig: MONGO_URI # User will set this in Render Dashboard secrets
+      - key: BASE_URL
+        value: https://kingtaxiwala.com
+      - key: ADMIN_SECRET_KEY
+        generateValue: true

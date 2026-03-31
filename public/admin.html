@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | King Taxiwala</title>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=10.0">
+    <style>
+        :root {
+            --primary-black: #0a0a0a;
+            --primary-gold: #c5a059;
+            --primary-white: #ffffff;
+            --text-muted: #a0a0a0;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-black);
+            color: var(--primary-white);
+            margin: 0; padding: 20px;
+        }
+        h1, h2 { font-family: 'Cinzel', serif; color: var(--primary-gold); }
+        
+        .container { max-width: 1200px; margin: 0 auto; }
+        
+        /* Login Section */
+        #login-section {
+            max-width: 400px;
+            margin: 100px auto;
+            background: #111;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(197, 160, 89, 0.3);
+            text-align: center;
+        }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        label { display: block; margin-bottom: 5px; color: var(--text-muted); }
+        input {
+            width: 100%; padding: 10px;
+            background: #222; border: 1px solid #444;
+            color: white; border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .btn {
+            background: var(--primary-gold);
+            color: black; padding: 10px 20px;
+            border: none; border-radius: 5px;
+            cursor: pointer; font-weight: bold;
+            width: 100%;
+        }
+        .btn:hover { opacity: 0.9; }
+        .error { color: #ff4d4d; margin-top: 10px; display: none; }
+        
+        /* Dashboard Section */
+        #dashboard-section { display: none; }
+        #login-section { display: none; }
+        #secret-denied { display: none; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        
+        .grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
+        .card {
+            background: #111; border-radius: 10px;
+            padding: 20px; border: 1px solid #333;
+            overflow-x: auto;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #222; }
+        th { color: var(--primary-gold); border-bottom: 2px solid #333; }
+        .action-btn {
+            background: #ff4d4d; color: white;
+            border: none; padding: 5px 10px; border-radius: 3px;
+            cursor: pointer; font-size: 0.8rem;
+        }
+        .action-btn:hover { background: #cc0000; }
+        
+        /* Insert Form */
+        .insert-form { margin-top: 20px; padding-top: 20px; border-top: 1px dashed #333; display: flex; gap: 10px; flex-wrap: wrap; }
+        .insert-form input { flex: 1; min-width: 150px; }
+        .btn-add { background: #25D366; width: auto; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- UNAUTHORIZED / HIDDEN ACCESS -->
+    <div id="secret-denied" style="max-width: 500px; margin: 150px auto; text-align: center; display: none;">
+        <i class="fa-solid fa-lock" style="font-size: 4rem; color: #ff4d4d; margin-bottom: 20px;"></i>
+        <h2 style="color: #ff4d4d; font-family: 'Cinzel', serif;">Access Restricted</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem; line-height: 1.6;">
+            The admin dashboard is private. Please use your unique access link to login.
+        </p>
+        <a href="/" class="btn" style="display:inline-block; width: auto; background: #333; color: white; margin-top: 20px; text-decoration: none;">Return Home</a>
+    </div>
+
+    <!-- LOGIN PAGE -->
+    <div id="login-section" style="display: none;">
+        <h2>Admin Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Username</label>
+                <input type="text" id="username" required autocomplete="username">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password" required autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div id="loginError" class="error">Invalid credentials</div>
+        </form>
+    </div>
+
+    <!-- DASHBOARD PAGE -->
+    <div id="dashboard-section" style="display:none;">
+        <div class="header">
+            <div>
+                <h1>Admin Dashboard</h1>
+                <a href="https://kingtaxiwala.com" target="_blank" style="color: var(--primary-gold); text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-solid fa-earth-americas"></i> View Live Website
+                </a>
+            </div>
+            <button type="button" id="logoutBtn" class="btn" style="width: auto; background: #333; color: white;">Logout</button>
+        </div>
+
+        <div class="grid">
+            <!-- Bookings management removed as per request -->
+
+        <!-- Reviews List -->
+        <div class="card">
+            <h2>Manage Reviews</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">All reviews from the website and manually added are shown here.</p>
+            <table id="reviewsTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Rating</th>
+                        <th>Comment</th>
+                        <th>Source</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td colspan="6" style="text-align: center; color: #a0a0a0; padding: 20px;">Loading reviews from database... Please wait...</td></tr>
+                </tbody>
+            </table>
+            
+            <h3 style="margin-top: 30px;">Add Review Manually</h3>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 15px;">Use this to add a review yourself. It will appear on the website alongside customer-submitted reviews.</p>
+            <form id="insertReviewForm" class="insert-form">
+                <input type="text" id="newReviewName" placeholder="Reviewer Name" required>
+                <input type="number" id="newReviewRating" placeholder="Rating (1-5)" min="1" max="5" value="5" required style="max-width: 100px;">
+                <input type="text" id="newReviewComment" placeholder="Review Comment" required>
+                <button type="submit" class="btn btn-add">Add Review</button>
+            </form>
+        </div>
+
+        <!-- Gallery List -->
+        <div class="card">
+            <h2>Manage Gallery</h2>
+            <table id="galleryTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Preview</th>
+                        <th>Image URL</th>
+                        <th>Caption</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Inserted via JS -->
+                </tbody>
+            </table>
+            
+            <h3 style="margin-top: 30px;">Add New Image</h3>
+            <form id="insertGalleryForm" class="insert-form">
+                <input type="url" id="newGalleryUrl" placeholder="Image URL (e.g., https://...)" required>
+                <input type="text" id="newGalleryCaption" placeholder="Caption (Optional)">
+                <button type="submit" class="btn btn-add">Add Image</button>
+            </form>
+        </div>
+
+        <!-- Pricing Management -->
+        <div class="card">
+            <h2>Manage Pricing</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">Note: These are stored in the database only. To reflect on the live site, update prices in pricing.html as well.</p>
+            <table id="pricingTable">
+                <thead>
+                    <tr>
+                        <th>Route</th>
+                        <th>Vehicle</th>
+                        <th>Original (₹)</th>
+                        <th>Discounted (₹)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Inserted via JS -->
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 30px;">Add / Update Price Entry</h3>
+            <form id="insertPricingForm" class="insert-form" style="flex-direction: column; align-items: stretch; gap: 12px;">
+                <input type="hidden" id="editPricingId">
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <input type="text" id="newPricingRoute" placeholder="Route (e.g. Vijayawada ↔ Hyderabad)" required style="flex: 2; min-width: 200px;">
+                    <select id="newPricingVehicle" style="flex: 1; min-width: 130px; background: #222; color: white; border: 1px solid #444; border-radius: 5px; padding: 10px;">
+                        <option value="Sedan">Sedan</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Innova">Innova</option>
+                        <option value="Tempo Traveller">Tempo Traveller</option>
+                    </select>
+                    <input type="number" id="newPricingOriginal" placeholder="Original Price" required style="min-width: 130px;">
+                    <input type="number" id="newPricingDiscounted" placeholder="Discounted Price" required style="min-width: 130px;">
+                </div>
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" id="pricingSubmitBtn" class="btn btn-add" style="width: auto;">Add Price</button>
+                    <button type="button" id="pricingCancelBtn" class="btn" style="width: auto; background: #555; display: none;">Cancel Edit</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Standard Tariff Management -->
+        <div class="card">
+            <h2>Manage Standard Tariff</h2>
+            <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 10px;">Note: Stored in database. Update pricing.html manually for live site changes to take effect.</p>
+            <table id="tariffTable">
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">Order</th>
+                        <th>Vehicle Name</th>
+                        <th>Icon</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Inserted via JS -->
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 30px;">Add / Update Standard Tariff</h3>
+            <form id="insertTariffForm" class="insert-form" style="flex-direction: column; align-items: stretch; gap: 15px;">
+                <input type="hidden" id="editTariffId">
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <input type="text" id="newTariffName" placeholder="Vehicle Name (e.g. Toyota Etios)" required style="flex: 2; min-width: 200px;">
+                    <input type="text" id="newTariffIcon" placeholder="Icon Class (e.g. fa-car)" value="fa-car" style="flex: 1; min-width: 150px;">
+                    <input type="number" id="newTariffOrder" placeholder="Display Order (e.g. 1)" value="0" style="flex: 1; min-width: 150px;">
+                </div>
+
+                <div style="padding: 15px; background: #1a1a1a; border-radius: 5px; border: 1px solid #333;">
+                    <h4 style="margin-top:0; margin-bottom: 10px; color: var(--primary-gold);">Package Rates</h4>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <input type="number" id="newTariffPkg4" placeholder="4Hrs-40Km (₹)">
+                        <input type="number" id="newTariffPkg8" placeholder="8Hrs-80Km (₹)">
+                        <input type="number" id="newTariffPkg10" placeholder="10Hrs-100Km (₹)">
+                        <input type="number" id="newTariffPkg12" placeholder="12Hrs-120Km (₹)">
+                    </div>
+                </div>
+
+                <div style="padding: 15px; background: #1a1a1a; border-radius: 5px; border: 1px solid #333;">
+                    <h4 style="margin-top:0; margin-bottom: 10px; color: var(--primary-gold);">12 Hrs Rent Details</h4>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <input type="number" id="newTariff12Rent" placeholder="12 Hrs Rent (₹)">
+                        <input type="number" id="newTariff12ExtraHr" placeholder="Extra Hour (₹)">
+                        <input type="number" id="newTariff12ExtraKm" placeholder="Extra Km (₹)">
+                        <input type="number" id="newTariff12Bata" placeholder="Driver Bata (₹)">
+                        <input type="number" id="newTariff12Mileage" placeholder="Mileage (Kms)">
+                    </div>
+                </div>
+
+                <div style="padding: 15px; background: #1a1a1a; border-radius: 5px; border: 1px solid #333;">
+                    <h4 style="margin-top:0; margin-bottom: 10px; color: var(--primary-gold);">24 Hrs Rent Details</h4>
+                    <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                        <input type="number" id="newTariff24Rent" placeholder="24 Hrs Rent (₹)">
+                        <input type="number" id="newTariff24ExtraHr" placeholder="Extra Hour (₹)">
+                        <input type="number" id="newTariff24ExtraKm" placeholder="Extra Km (₹)">
+                        <input type="number" id="newTariff24Bata" placeholder="Driver Bata (₹)">
+                        <input type="number" id="newTariff24Mileage" placeholder="Mileage (Kms)">
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 10px;">
+                    <button type="submit" id="tariffSubmitBtn" class="btn btn-add" style="width: auto;">Add Tariff</button>
+                    <button type="button" id="tariffCancelBtn" class="btn" style="width: auto; background: #555; display: none;">Cancel Edit</button>
+                </div>
+            </form>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="/js/admin.js?v=10.0"></script>
+</body>
+</html>
