@@ -110,6 +110,12 @@ app.get('/pricing', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'pricing.html'));
 });
 
+// ── Force Root Route to Index ────────────────────────────────────────────────
+app.get('/', (req, res) => {
+    res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 // ── Static files ─────────────────────────────────────────────────────────────
 // etag + lastModified enabled by default in Express — send 304 Not Modified when unchanged
 app.use(express.static(path.join(__dirname, 'public'), {
@@ -138,6 +144,15 @@ const admin    = require('./routes/admin');
 app.use('/api/bookings', bookings);
 app.use('/api/reviews', reviews); // Remove cache for real-time polling
 app.use('/api/gallery', cacheMiddleware(600), gallery); // Cache gallery for 10 mins
+
+// ── Final 404 & Error Handlers ──────────────────────────────────────────────
+app.get('*', (req, res) => {
+    // If it's an HTML request, serve index.html as a fallback (for SPA functionality or broken links)
+    if (req.accepts('html')) {
+        return res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    }
+    res.status(404).json({ error: 'Not Found', path: req.url });
+});
 app.use('/api/admin', admin);
 
 // 404 handler
