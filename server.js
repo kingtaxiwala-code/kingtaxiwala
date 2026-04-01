@@ -154,7 +154,8 @@ app.use('/api/gallery', cacheMiddleware(600), gallery); // Cache gallery for 10 
 app.use('/api/admin', admin); // Must be before the catch-all below
 
 // ── Final 404 & Error Handlers ──────────────────────────────────────────────
-app.get('*', (req, res) => {
+// Note: Express v5 no longer supports bare '*' wildcard in app.get() — use app.use() instead
+app.use((req, res) => {
     // If it's an HTML request, serve index.html as a fallback (for SPA functionality or broken links)
     if (req.accepts('html')) {
         return res.sendFile(path.join(__dirname, 'public', 'index.html'));
@@ -162,10 +163,6 @@ app.get('*', (req, res) => {
     res.status(404).json({ error: 'Not Found', path: req.url });
 });
 
-// 404 handler
-app.use((req, res) => {
-    res.status(404).send('Page Not Found');
-});
 
 // ── Database & Server Start ──────────────────────────────────────────────────
 const startServer = async () => {
