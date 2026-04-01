@@ -28,13 +28,20 @@ app.use(compression());
 app.use(helmet({
     contentSecurityPolicy: {
         directives: {
-            ...helmet.contentSecurityPolicy.getDefaultDirectives(),
-            "script-src": ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com", "https://cdn.jsdelivr.net"],
-            "script-src-attr": ["'unsafe-inline'"],
-            "img-src": ["'self'", "data:", "https://*"],
-            "media-src": ["'self'", "https://assets.mixkit.co"],
-            "frame-src": ["'self'", "https://www.google.com", "https://maps.google.com"],
-            "connect-src": ["'self'", "https://*.google.com", "https://*.googleapis.com"],
+            defaultSrc:       ["'self'"],
+            baseUri:          ["'self'"],
+            fontSrc:          ["'self'", "https:", "data:"],
+            formAction:       ["'self'"],
+            frameAncestors:   ["'self'"],
+            objectSrc:        ["'none'"],
+            scriptSrc:        ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com", "https://cdn.jsdelivr.net"],
+            scriptSrcAttr:    ["'unsafe-inline'"],
+            styleSrc:         ["'self'", "https:", "'unsafe-inline'"],
+            imgSrc:           ["'self'", "data:", "https:"],
+            mediaSrc:         ["'self'", "https://assets.mixkit.co"],
+            frameSrc:         ["'self'", "https://www.google.com", "https://maps.google.com"],
+            connectSrc:       ["'self'", "https://*.google.com", "https://*.googleapis.com"],
+            upgradeInsecureRequests: [],
         },
     },
 }));
@@ -144,6 +151,7 @@ const admin    = require('./routes/admin');
 app.use('/api/bookings', bookings);
 app.use('/api/reviews', reviews); // Remove cache for real-time polling
 app.use('/api/gallery', cacheMiddleware(600), gallery); // Cache gallery for 10 mins
+app.use('/api/admin', admin); // Must be before the catch-all below
 
 // ── Final 404 & Error Handlers ──────────────────────────────────────────────
 app.get('*', (req, res) => {
@@ -153,7 +161,6 @@ app.get('*', (req, res) => {
     }
     res.status(404).json({ error: 'Not Found', path: req.url });
 });
-app.use('/api/admin', admin);
 
 // 404 handler
 app.use((req, res) => {
