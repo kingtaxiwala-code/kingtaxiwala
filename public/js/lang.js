@@ -185,7 +185,7 @@ const translations = {
         
         // Index / SEO Destinations
         destLabel: 'CHECK OUT',
-        destTitle: 'Our Popular Destinations',
+        destTitle: 'Where To Next?',
         destDesc: 'Serving Andhra Pradesh & Telangana travelers for over 20 years. Experience the reliability and safety that only two decades of dedicated cab service provides.',
         dest1: 'Vijayawada to Hyderabad &ndash; Cab service',
         dest2: 'Vijayawada to Tirupati &ndash; Cab service',
