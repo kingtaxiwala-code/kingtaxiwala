@@ -1,4 +1,5 @@
 const translations = {
+    // Version: 11.0.1 (Updated 2026-05-14)
     en: {
         // Global / Nav
         homeNav: 'Home',
