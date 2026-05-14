@@ -1,4 +1,4 @@
-// Service Worker Kill-Switch - Version 10.0 (Global Force Refresh 2026-03-31)
+// Service Worker Kill-Switch - Version 11.0.2 (Favicon/PWA Refresh 2026-05-14)
 self.addEventListener('install', (event) => {
   self.skipWaiting();
 });
