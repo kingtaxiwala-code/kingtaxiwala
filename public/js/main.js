@@ -314,7 +314,14 @@ window.addEventListener('components-loaded', () => {
                 homeReviewsContainer.innerHTML = fallbackHTML;
             }
         };
-        fetchHomeReviews();
+
+        const reviewsObserver = new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
+                fetchHomeReviews();
+                observer.disconnect();
+            }
+        }, { rootMargin: '200px' });
+        reviewsObserver.observe(homeReviewsContainer);
     }
 
     // --- Dynamic Gallery Page Fetch ---
@@ -345,6 +352,13 @@ window.addEventListener('components-loaded', () => {
                 galleryGrid.innerHTML = fallbackGallery;
             }
         };
-        fetchDynamicGallery();
+        
+        const galleryObserver = new IntersectionObserver((entries, observer) => {
+            if (entries[0].isIntersecting) {
+                fetchDynamicGallery();
+                observer.disconnect();
+            }
+        }, { rootMargin: '200px' });
+        galleryObserver.observe(galleryGrid);
     }
 });
