@@ -1,4 +1,12 @@
-// Version: 1.1.2 - Translation Debug
+// Version: 11.0.1 - Force Cache Clear
+if (localStorage.getItem('site_version') !== '11.0.1') {
+    const currentLang = localStorage.getItem('site_lang');
+    localStorage.clear();
+    localStorage.setItem('site_version', '11.0.1');
+    if (currentLang) localStorage.setItem('site_lang', currentLang);
+}
+
+// Previous version header was: // Version: 1.1.2 - Translation Debug
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
