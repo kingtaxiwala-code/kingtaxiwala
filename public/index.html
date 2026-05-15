@@ -10,9 +10,13 @@
     <title>King Taxiwala - Vijayawada & Hyderabad Taxi Service | Affordable & Trusted Travels</title>
     <!-- PWA & Favicon -->
     <link rel="manifest" href="/manifest.json?v=2">
+    <link rel="shortcut icon" href="/favicon-v2.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-v2.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-v2.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-v2.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192x192-v2.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512x512-v2.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="King Taxiwala">
@@ -39,46 +43,54 @@
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CarRental",
-      "name": "King Taxiwala Travels",
-      "image": "https://kingtaxiwala.com/img/logo.png",
-      "@id": "https://kingtaxiwala.com/",
-      "url": "https://kingtaxiwala.com/",
-      "telephone": "+919642095559",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Tankasala Vari St, Sri Ramachandra Nagar, Kanuru",
-        "addressLocality": "Vijayawada",
-        "addressRegion": "AP",
-        "postalCode": "520007",
-        "addressCountry": "IN"
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "King Taxiwala Travels",
+        "url": "https://kingtaxiwala.com/"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 16.5062,
-        "longitude": 80.6480
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "sameAs": [
-        "https://www.instagram.com/kingtaxiwala",
-        "https://www.youtube.com/@KingTaxiwala"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "CarRental",
+        "name": "King Taxiwala Travels",
+        "image": "https://kingtaxiwala.com/img/logo.png",
+        "@id": "https://kingtaxiwala.com/",
+        "url": "https://kingtaxiwala.com/",
+        "telephone": "+919642095559",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Tankasala Vari St, Sri Ramachandra Nagar, Kanuru",
+          "addressLocality": "Vijayawada",
+          "addressRegion": "AP",
+          "postalCode": "520007",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 16.5062,
+          "longitude": 80.6480
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+            "Sunday"
+          ],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "sameAs": [
+          "https://www.instagram.com/kingtaxiwala",
+          "https://www.youtube.com/@KingTaxiwala"
+        ]
+      }
+    ]
     </script>
     <!-- DNS prefetch for all external resources -->
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
@@ -485,6 +497,3 @@
 </body>
 
 </html>
-
-
-

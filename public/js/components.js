@@ -14,7 +14,8 @@ const Components = {
     <nav id="navbar" class="navbar">
         <div class="nav-container">
             <a href="/" class="nav-logo">
-                <i class="fa-solid fa-crown gold-text"></i> KING TAXIWALA
+                <img src="/images/logo.png" alt="King Taxiwala" class="logo-img">
+                <span>KING TAXIWALA</span>
             </a>
             
             <div class="nav-actions">

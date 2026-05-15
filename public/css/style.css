@@ -257,11 +257,27 @@ ul {
 }
 
 .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
     font-size: 1.5rem;
     font-weight: 700;
     font-family: var(--font-heading);
     letter-spacing: 2px;
     z-index: 1001;
+    transition: var(--transition);
+}
+
+.logo-img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.3));
+    transition: var(--transition);
+}
+
+.navbar.sticky .logo-img {
+    height: 38px;
 }
 
 .nav-menu {
@@ -325,6 +341,15 @@ ul {
 
 /* Mobile Navigation Drawer */
 @media (max-width: 992px) {
+    .logo-img {
+        height: 38px;
+    }
+
+    .nav-logo {
+        font-size: 1.2rem;
+        gap: 8px;
+    }
+
     .menu-toggle {
         display: flex;
     }
@@ -2310,6 +2335,13 @@ select.form-control option {
 }
 
 @media (max-width: 480px) {
+    .logo-img {
+        height: 32px;
+    }
+    .nav-logo {
+        font-size: 1rem;
+        gap: 6px;
+    }
     .vehicles-pricing-grid {
         grid-template-columns: 1fr;
     }
