@@ -1,9 +1,6 @@
+Sitemap: https://kingtaxiwala.com/sitemap.xml
+
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /api
-
-User-agent: Googlebot
-Allow: /
-
-Sitemap: https://kingtaxiwala.com/sitemap.xml

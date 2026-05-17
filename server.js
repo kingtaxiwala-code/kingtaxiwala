@@ -123,6 +123,19 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// ── SEO Routes ───────────────────────────────────────────────────────────────
+app.get('/sitemap.xml', (req, res) => {
+    res.setHeader('Content-Type', 'application/xml');
+    res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    res.sendFile(path.join(__dirname, 'public', 'sitemap.xml'));
+});
+
+app.get('/robots.txt', (req, res) => {
+    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    res.sendFile(path.join(__dirname, 'public', 'robots.txt'));
+});
+
 // ── Static files ─────────────────────────────────────────────────────────────
 // etag + lastModified enabled by default in Express — send 304 Not Modified when unchanged
 app.use(express.static(path.join(__dirname, 'public'), {
