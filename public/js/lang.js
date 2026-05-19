@@ -13,21 +13,21 @@ const translations = {
         
         // Hero
         heroTitle: 'King Taxiwala Travels',
-        heroSubtitle: 'Trusted & Exceptional Car Travels for Comfortable Journeys',
+        heroSubtitle: 'Trusted Vijayawada to Hyderabad Cabs & Premium Outstation Car Travels',
         heroTiming: '<i class="fa-regular fa-clock"></i> 24/7 Service Available',
         viewVehiclesBtn: 'View Vehicles',
         
         // Index / SEO
         premiumCabsTitle: 'Trusted <span class="gold-text">Cab Services</span>',
-        premiumCabsSub: 'Reliable, Safe, and Exceptional Travel Across South India',
+        premiumCabsSub: 'Affordable One-Way Drops, Outstation Cabs & Local Taxi Services Across South India',
         vijHydTitle: '<i class="fa-solid fa-map-location-dot gold-text"></i> Vijayawada to Hyderabad Cabs',
-        vijHydDesc: 'Looking for a comfortable ride between Vijayawada and Hyderabad? King Taxiwala offers highly dependable <strong>Vijayawada to Hyderabad cab services</strong> and vice versa. Enjoy a seamless ~275km journey in our well-maintained Sedans and SUVs.',
+        vijHydDesc: 'Looking for a comfortable ride between Vijayawada and Hyderabad? King Taxiwala offers highly dependable <strong>Vijayawada to Hyderabad cab services</strong> and vice versa. Enjoy a seamless ~275km journey with our experienced drivers, one-way drop options, and pristine SUVs.',
         viewPricingBtn: 'View Pricing <i class="fa-solid fa-arrow-right"></i>',
         airportTitle: '<i class="fa-solid fa-plane-arrival gold-text"></i> Airport Transfers',
-        airportDesc: 'Never miss a flight with our punctual <strong>Shamshabad Airport pickup and drop</strong> services. We track your flight status to ensure our drivers are waiting for you right when you land.',
+        airportDesc: 'Never miss a flight with our punctual <strong>Vijayawada Airport (Gannavaram) and Hyderabad Airport (Shamshabad) taxi</strong> pickup & drop. We track flight status for seamless timings.',
         bookAirportBtn: 'Book Airport Cab <i class="fa-solid fa-arrow-right"></i>',
         outstationTitle: '<i class="fa-solid fa-road gold-text"></i> Outstation Car Travels',
-        outstationDesc: 'Planning a trip to Bangalore, Tirupati, or Chennai? Our <strong>Outstation Taxi Service</strong> provides experienced drivers familiar with inter-state highways, ensuring a safe and smooth journey for your family.',
+        outstationDesc: 'Planning a trip to Tirupati, Bangalore, or Chennai? Our <strong>Outstation Car Travels</strong> offers top-rated vehicle rentals and experienced drivers familiar with inter-state highways.',
         explorePackagesBtn: 'Explore Packages <i class="fa-solid fa-arrow-right"></i>',
         
         // Stats
